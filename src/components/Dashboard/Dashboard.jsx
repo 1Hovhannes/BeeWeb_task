@@ -21,7 +21,7 @@ const Dashboard = () => {
       content: item,
     };
   });
-  let onAddBoxClick = () => {
+  const onAddBoxClick = () => {
     setBlocks([...blocks, value[0].children[0].text]);
     setValue(initialValue);
   };
@@ -29,9 +29,7 @@ const Dashboard = () => {
   const onLogout = () => {
     dispatch(logoutActions(history));
   };
-  const handleChange = (value) => {
-    setValue(value);
-  };
+
   return (
     <div className="dashboard-container">
       <div className="logout-div">
@@ -41,14 +39,13 @@ const Dashboard = () => {
       </div>
 
       <div className="input-content">
-        <Slate editor={editor} value={value} onChange={handleChange}>
+        <Slate editor={editor} value={value} onChange={(value) => setValue(value)}>
           <Editable
             className="input"
             placeholder="Write..."
             onKeyDown={(e) => {
               if (e.key === "Enter") {
                 e.preventDefault();
-                editor.insertText("");
               }
             }}
           />
