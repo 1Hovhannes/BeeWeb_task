@@ -1,0 +1,20 @@
+.wrapper {
+  background-color: #d9d9f3;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  overflow: auto;
+  .login-form-button {
+    background-color: #6c6c97;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .registration {
+    font-size: 16px;
+    font-weight: 700;
+  }
+}
